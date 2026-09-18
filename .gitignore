@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.env*.local
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Auto-generated demo database (recreated on first run)
+/data
+
+# Uploaded images (keep the folder, ignore its contents)
+/public/uploads/*
+!/public/uploads/.gitkeep

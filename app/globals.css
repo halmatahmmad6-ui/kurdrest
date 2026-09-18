@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "NRT";
+  src: url("/fonts/NRT-Bd.ttf") format("truetype");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   THEME TOKENS
+   --------------------------------------------------------------------------
+   Everything a designer needs to rebrand this app lives here. Colors are
+   HSL triplets (no `hsl()` wrapper — Tailwind adds that) so they can carry
+   opacity modifiers like `bg-brand-500/10`. Swap the values below and the
+   entire app — buttons, links, focus rings, hover states — updates.
+   ========================================================================== */
+
+@layer base {
+  :root {
+    /* ---- Brand ramp: the single accent used for CTAs, links, active states ---- */
+    --brand-50: 340 100% 97%;
+    --brand-100: 340 90% 93%;
+    --brand-200: 340 85% 86%;
+    --brand-300: 340 80% 75%;
+    --brand-400: 340 78% 63%;
+    --brand-500: 340 78% 51%;   /* primary brand color */
+    --brand-600: 340 75% 43%;
+    --brand-700: 340 70% 35%;
+    --brand-800: 340 65% 27%;
+    --brand-foreground: 0 0% 100%;
+
+    /* ---- Secondary accent: used sparingly (badges, links inside dark surfaces) ---- */
+    --accent: 174 62% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    /* ---- Neutrals & surfaces ---- */
+    --background: 40 20% 98%;
+    --foreground: 240 8% 12%;
+    --surface: 0 0% 100%;
+    --surface-hover: 240 10% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 8% 12%;
+    --muted: 240 8% 94%;
+    --muted-foreground: 240 5% 42%;
+    --border: 240 10% 90%;
+    --input: 240 10% 88%;
+    --ring: 340 78% 51%;
+
+    --destructive: 4 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* ---- Shape & type ---- */
+    --radius: 14px;
+    --font-sans: "NRT", "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "NRT", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 96%;
+    --surface: 240 9% 12%;
+    --surface-hover: 240 9% 16%;
+    --card: 240 9% 12%;
+    --card-foreground: 0 0% 96%;
+    --muted: 240 8% 18%;
+    --muted-foreground: 240 5% 65%;
+    --border: 240 8% 20%;
+    --input: 240 8% 22%;
+    --ring: 340 78% 58%;
+
+    --brand-500: 340 78% 58%;
+    --brand-600: 340 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brand-200 text-brand-800;
+  }
+}
+
+/* Hide scrollbar on the horizontal chip row but keep it scrollable */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .masonry-grid {
+    display: flex;
+    width: 100%;
+    margin-left: -0.75rem;
+  }
+  .masonry-grid_column {
+    padding-left: 0.75rem;
+    background-clip: padding-box;
+  }
+  .masonry-grid_column > * {
+    margin-bottom: 0.75rem;
+  }
+}
