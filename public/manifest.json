@@ -1,0 +1,13 @@
+{
+  "name": "Kurd Rest",
+  "short_name": "Kurd Rest",
+  "description": "A Pinterest-style feed for images, videos, and boards.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e60023",
+  "icons": [
+    { "src": "/logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
